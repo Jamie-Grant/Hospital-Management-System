@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using HospitalManagementSystem.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace HospitalManagementSystem.Data

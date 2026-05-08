@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using HospitalManagementSystem.Models;
 using HospitalManagementSystem.Data;
 
 
@@ -11,8 +12,6 @@ builder.Services.AddControllersWithViews();
 // Identity and database configuration
 
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-builder.Services.AddDefaultIdentity<HospitalManagementSystemUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<HospitalManagementSystemContext>();
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
 
