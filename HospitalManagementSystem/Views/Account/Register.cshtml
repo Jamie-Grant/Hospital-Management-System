@@ -1,8 +1,12 @@
 ﻿@model HospitalManagementSystem.Models.RegisterViewModel
+@{
+	ViewData["Title"] = "Register";
+}
+
 
 <h1>User Registration</h1>
 
-<form method="post" asp-controller="Account" asp-action="Register">
+<form method="post">
 	<div asp-validation-summary="All" class="text-danger"></div>
 	<div class="form-group">
 		<label asp-for="Email"></label>
