@@ -29,8 +29,8 @@ namespace HospitalManagementSystem.Controllers
             {
                 var user = new IdentityUser
                 {
-                    UserName = model.Username,
-                    Email = model.Email,
+                    UserName = model.Email,
+                    Email = model.Email
                 };
 
                 var result = await _userManager.CreateAsync(user, model.Password);
@@ -73,6 +73,13 @@ namespace HospitalManagementSystem.Controllers
                 ModelState.AddModelError(string.Empty, "Invalid Credentials");
             }
             return View(user);
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+
+            return RedirectToAction("Login");
         }
     }
 }
